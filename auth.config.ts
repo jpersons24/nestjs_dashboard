@@ -5,6 +5,8 @@ export const authConfig = {
 		signIn: "/login",
 	},
 	callbacks: {
+		// auth: contains users session
+		// request: contains incoming request
 		authorized({ auth, request: { nextUrl } }) {
 			const isLoggedIn = !!auth?.user;
 			const isOnDashboard = nextUrl.pathname.startsWith("/dashboard");
